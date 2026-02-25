@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { Users, Clock, Trophy, Target } from "lucide-react";
 
 const stats = [
-  { value: "500+", label: "Hackers", icon: Users },
-  { value: "48h", label: "Non-Stop", icon: Clock },
-  { value: "$50K", label: "Prize Pool", icon: Trophy },
-  { value: "6", label: "Tracks", icon: Target },
+  { value: "100+", label: "Hackers", icon: Users },
+  { value: "24h", label: "Non-Stop", icon: Clock },
+  { value: "₹1,00,000", label: "Prize Pool", icon: Trophy },
+  { value: "9", label: "Tracks", icon: Target },
 ];
 
 export default function About() {
@@ -41,7 +41,7 @@ export default function About() {
 
             <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
               <p>
-                <strong className="text-white">Cyberthon 26</strong> isn't just a hackathon; it's a convergence of the brightest minds in security and engineering.
+                <strong className="text-white">Cyberthon'26</strong> isn't just a hackathon; it's a convergence of the brightest minds in security and engineering.
                 Organized by the <span className="text-cyan-400 font-medium text-glow-cyan">Centre for Cybersecurity Excellence and Empowerment (CCEE)</span>, this event pushes the boundaries of digital innovation.
               </p>
               <p>

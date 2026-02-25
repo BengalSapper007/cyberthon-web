@@ -1,12 +1,12 @@
 import cybertracsLogo from "../assets/cybertracs.png";
-import devfolioLogo from "../assets/devfolio.png";
+import THLogo from "../assets/thinkroot_dev_ai_logo.jpeg";
 
 export default function Sponsors() {
   const sponsors = [
     {
-      name: "Devfolio",
-      logo: devfolioLogo,
-      alt: "DEVFOLIO LOGO",
+      name: "Thinkroot Dev AI",
+      logo: THLogo,
+      alt: "THINKROOT DEV AI LOGO",
     },
     {
       name: "Cybertracs",

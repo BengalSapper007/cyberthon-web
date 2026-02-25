@@ -37,7 +37,7 @@ export default function Navbar() {
             }`}
         >
           {/* Logo */}
-          <a href="#" className="group relative flex items-center gap-2 font-display text-xl md:text-2xl font-bold tracking-wider text-white">
+          <a href="#home" className="group relative flex items-center gap-2 font-display text-xl md:text-2xl font-bold tracking-wider text-white">
             <Terminal className="text-cyan-400 group-hover:animate-pulse" />
             <span className="relative z-10">CCEE<span className="text-cyan-400">.CYBERTHON</span></span>
           </a>
@@ -59,7 +59,9 @@ export default function Navbar() {
           {/* Right Action */}
           <div className="hidden md:block">
             <a
-              href="#hero"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd3dl_lrVXQTx8w13N5NKuiv7C17mDZztDtpii-nbZzScNJ4g/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-display text-xs font-bold text-black uppercase tracking-widest transition-all duration-300 bg-cyan-400 rounded-full hover:bg-cyan-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
             >
               <span className="relative">Join Cyberthon</span>
@@ -100,12 +102,14 @@ export default function Navbar() {
               </motion.a>
             ))}
             <motion.a
-              href="#hero"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd3dl_lrVXQTx8w13N5NKuiv7C17mDZztDtpii-nbZzScNJ4g/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="px-8 py-3 bg-cyan-500 text-black font-display font-bold font-bold rounded-full shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+              className="px-8 py-3 bg-cyan-500 text-black font-display font-bold rounded-full shadow-[0_0_20px_rgba(34,211,238,0.5)]"
             >
               JOIN CYBERTHON
             </motion.a>

@@ -3,7 +3,7 @@ import ThreeDCarousel, { ThreeDCarouselItem } from "./ThreeDCarousel";
 const galleryItems: ThreeDCarouselItem[] = [
     {
         id: 1,
-        brand: "Cyberthon '24",
+        brand: "Cyber Carnival 2025",
         title: "Highlights",
         description: "The ultimate frontier for cybersecurity innovation. Where elite hackers build the digital future.",
         tags: ["Hacking", "Network", "Security"],
@@ -12,7 +12,7 @@ const galleryItems: ThreeDCarouselItem[] = [
     },
     {
         id: 2,
-        brand: "Workshop Phase",
+        brand: "Cyber Carnival 2024",
         title: "Deep Dive",
         description: "Intensive training sessions led by industry experts to prepare participants for the final showdown.",
         tags: ["Learning", "Expertise", "Skill"],
@@ -21,7 +21,7 @@ const galleryItems: ThreeDCarouselItem[] = [
     },
     {
         id: 3,
-        brand: "Final Showcase",
+        brand: "Cyber Carnival 2024",
         title: "The Battle",
         description: "Witness the intensity of the final 24-hour hackathon where champions are forged in code.",
         tags: ["Hackathon", "Intensity", "Win"],
@@ -30,7 +30,7 @@ const galleryItems: ThreeDCarouselItem[] = [
     },
     {
         id: 4,
-        brand: "Network Hub",
+        brand: "Cyberthon 2024",
         title: "Connection",
         description: "Bridging the gap between talented individuals and leading corporations in the tech industry.",
         tags: ["Networking", "Careers", "Connect"],
@@ -39,7 +39,7 @@ const galleryItems: ThreeDCarouselItem[] = [
     },
     {
         id: 5,
-        brand: "Innovation Lab",
+        brand: "Champions",
         title: "Creative Solutions",
         description: "Exploring groundbreaking ideas and developing tools to protect the future of the web.",
         tags: ["Innovation", "Future", "Web3"],

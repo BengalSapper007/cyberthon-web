@@ -98,7 +98,7 @@ export default function Timeline() {
   }, [svgStart, svgEnd]);
 
   return (
-    <section ref={targetRef} className="relative bg-background" style={{ height: totalHeight + "px" }}>
+    <section id="timeline" ref={targetRef} className="relative bg-background" style={{ height: totalHeight + "px" }}>
 
       {/* FIXED VIEWPORT */}
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
