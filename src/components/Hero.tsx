@@ -225,7 +225,7 @@ export default function Hero() {
               <div className="absolute inset-0 filter blur-xl bg-cyan-400 opacity-30 group-hover:opacity-60 transition-opacity" />
             </a>
 
-            <button className="group relative px-10 py-4 glass text-white font-display text-xs font-bold tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:text-cyan-400">
+            <a href="#contact" className="group relative px-10 py-4 glass text-white font-display text-xs font-bold tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 hover:border-cyan-500/40 hover:text-cyan-400">
               <span className="relative z-10 flex items-center gap-3">
                 Contact us
                 <motion.span
@@ -233,7 +233,7 @@ export default function Hero() {
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >→</motion.span>
               </span>
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </motion.div>

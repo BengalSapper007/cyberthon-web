@@ -45,7 +45,7 @@ export default function About() {
                 Organized by the <span className="text-cyan-400 font-medium text-glow-cyan">Centre for Cybersecurity Excellence and Empowerment (CCEE)</span>, this event pushes the boundaries of digital innovation.
               </p>
               <p>
-                For 48 hours, the boundaries of reality dissolve as you code, break, and build the future.
+                For 24 hours, the boundaries of reality dissolve as you code, break, and build the future.
                 From <span className="text-cyan-400">zero-day exploits</span> to <span className="text-purple-400">quantum-resistant encryption</span>,
                 this is your arena to showcase skills that define the next generation of cyber defense.
               </p>
