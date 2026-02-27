@@ -16,76 +16,78 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
-      <motion.nav
+      <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? "pt-4" : "pt-6"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+            ? "bg-black/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
+            : "bg-transparent"
           }`}
       >
-        <div
-          className={`relative max-w-7xl w-[95%] md:w-full mx-auto px-6 h-16 md:h-20 flex items-center justify-between rounded-full transition-all duration-500 ${scrolled
-            ? "bg-black/60 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] md:w-[85%] lg:w-[75%]"
-            : "bg-transparent"
-            }`}
-        >
-          {/* Logo */}
-          <a href="#home" className="group relative flex items-center gap-2 font-display text-xl md:text-2xl font-bold tracking-wider text-white">
-            <Terminal className="text-cyan-400 group-hover:animate-pulse" />
-            <span className="relative z-10">CCEE<span className="text-cyan-400">.CYBERTHON</span></span>
-          </a>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <a
+              href="#home"
+              className="group flex items-center gap-2.5 font-display text-lg md:text-xl font-bold tracking-wider text-white shrink-0"
+            >
+              <Terminal className="w-5 h-5 text-cyan-400 group-hover:animate-pulse" />
+              <span className="text-cyan-400">CYBERTHON</span>
+            </a>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full px-2 py-1 border border-white/5 backdrop-blur-sm">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="relative px-5 py-2 font-display text-xs tracking-widest uppercase text-white/70 hover:text-white transition-colors duration-300 group overflow-hidden rounded-full"
-              >
-                <span className="relative z-10">{link.label}</span>
-                <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
-              </a>
-            ))}
-          </div>
+            {/* Desktop Nav Links */}
+            <nav className="hidden md:flex items-center gap-1">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="relative px-4 py-2 font-display text-[11px] tracking-[0.15em] uppercase text-white/60 hover:text-cyan-400 transition-colors duration-300 rounded-lg group"
+                >
+                  <span className="relative z-10">{link.label}</span>
+                  <span className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              ))}
+            </nav>
 
-          {/* Right Action */}
-          <div className="hidden md:block">
+            {/* Desktop CTA */}
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSd3dl_lrVXQTx8w13N5NKuiv7C17mDZztDtpii-nbZzScNJ4g/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-display text-xs font-bold text-black uppercase tracking-widest transition-all duration-300 bg-cyan-400 rounded-full hover:bg-cyan-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+              className="hidden md:inline-flex items-center justify-center px-5 py-2 font-display text-[11px] font-bold text-black uppercase tracking-[0.15em] bg-cyan-400 rounded-full transition-all duration-300 hover:bg-cyan-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(34,211,238,0.4)] shrink-0"
             >
-              <span className="relative">Join Cyberthon</span>
+              Join Cyberthon
             </a>
+
+            {/* Mobile Toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden p-2 text-white/80 hover:text-cyan-400 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
-
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative z-50 p-2 text-white hover:text-cyan-400 transition-colors"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-      </motion.nav>
+      </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            animate={{ opacity: 1, backdropFilter: "blur(12px)" }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="fixed inset-0 z-40 bg-black/90 md:hidden flex flex-col items-center justify-center space-y-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-6"
           >
             {links.map((link, i) => (
               <motion.a
@@ -95,8 +97,8 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                transition={{ delay: i * 0.1 }}
-                className="font-display text-2xl font-bold tracking-widest text-white hover:text-cyan-400 transition-colors"
+                transition={{ delay: i * 0.07 }}
+                className="font-display text-xl font-bold tracking-[0.2em] uppercase text-white/80 hover:text-cyan-400 transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -109,9 +111,9 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="px-8 py-3 bg-cyan-500 text-black font-display font-bold rounded-full shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+              className="mt-4 px-8 py-3 bg-cyan-400 text-black font-display text-sm font-bold tracking-[0.15em] uppercase rounded-full shadow-[0_0_24px_rgba(34,211,238,0.4)]"
             >
-              JOIN CYBERTHON
+              Join Cyberthon
             </motion.a>
           </motion.div>
         )}
