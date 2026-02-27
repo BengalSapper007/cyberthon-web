@@ -26,15 +26,15 @@ export default function Footer() {
             </div>
             <div className="space-y-4">
               <div className="flex flex-col">
-                <span className="text-white/60 text-xs font-mono uppercase tracking-wider">Vishwa V</span>
-                <a href="tel:+918946070689" className="text-cyan-400 text-sm font-mono hover:text-cyan-300 transition-colors">
-                  +91 89460 70689
-                </a>
-              </div>
-              <div className="flex flex-col">
                 <span className="text-white/60 text-xs font-mono uppercase tracking-wider">Pinak Mukherjee</span>
                 <a href="tel:+918961948418" className="text-cyan-400 text-sm font-mono hover:text-cyan-300 transition-colors">
                   +91 89619 48418
+                </a>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white/60 text-xs font-mono uppercase tracking-wider">Vishwa V</span>
+                <a href="tel:+918946070689" className="text-cyan-400 text-sm font-mono hover:text-cyan-300 transition-colors">
+                  +91 89460 70689
                 </a>
               </div>
             </div>
