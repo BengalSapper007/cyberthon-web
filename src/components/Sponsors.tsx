@@ -1,43 +1,64 @@
+import srmLogo from "../assets/srm.png";
+import cceeLogo from "../assets/ccee.png";
 import cybertracsLogo from "../assets/cybertracs.png";
-import THLogo from "../assets/thinkroot_dev_ai_logo.jpeg";
+import thinkrootLogo from "../assets/thinkroot.png";
+
+const categories = [
+  {
+    title: "Hosted At",
+    items: [{ name: "SRM Institute of Science and Technology", logo: srmLogo }],
+  },
+  {
+    title: "Organized By",
+    items: [{ name: "CCEE", logo: cceeLogo }],
+  },
+  {
+    title: "Powered By",
+    items: [{ name: "Cybertracs", logo: cybertracsLogo }],
+  },
+  {
+    title: "Our Sponsors",
+    items: [{ name: "Thinkroot", logo: thinkrootLogo }],
+  },
+];
 
 export default function Sponsors() {
-  const sponsors = [
-    {
-      name: "Thinkroot Dev AI",
-      logo: THLogo,
-      alt: "THINKROOT DEV AI LOGO",
-    },
-    {
-      name: "Cybertracs",
-      logo: cybertracsLogo,
-      alt: "Cybertracs technology consulting and research logo",
-    },
-  ];
-
   return (
     <section id="sponsors" className="py-24 bg-background">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
 
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Our Sponsors
-          </h2>
-        </div>
+        {/* Vertical Stack */}
+        <div className="flex flex-col gap-16">
+          {categories.map((category) => (
+            <div key={category.title} className="flex flex-col items-center text-center group">
+              {/* Category Label */}
+              <span className="font-display text-lg md:text-2xl tracking-[0.2em] uppercase text-cyan-400 mb-6">
+                {category.title}
+              </span>
 
-        {/* Sponsor Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {sponsors.map((sponsor, index) => (
-            <div
-              key={index}
-              className="h-40 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center p-8 transition hover:border-cyan-500/40"
-            >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.alt}
-                className="max-h-24 w-auto object-contain"
-              />
+              {/* Logo Card */}
+              {category.items.map((item) => (
+                <div
+                  key={item.name}
+                  className="w-full max-w-xs bg-white/[0.03] rounded-2xl border border-white/[0.06] flex items-center justify-center py-6 px-8 transition-all duration-500 hover:border-cyan-500/30 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(34,211,238,0.05)]"
+                >
+                  <img
+                    src={item.logo}
+                    alt={item.name}
+                    className="max-h-16 md:max-h-20 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </div>
+              ))}
+
+              {/* Name Label */}
+              {category.items.map((item) => (
+                <span
+                  key={item.name}
+                  className="mt-4 text-xs text-white/30 font-mono tracking-wider"
+                >
+                  {item.name}
+                </span>
+              ))}
             </div>
           ))}
         </div>

@@ -22,20 +22,20 @@ const events = [
   },
   {
     year: "13th March",
-    title: "Technical Inspections",
+    title: "Critique Round",
     desc: "4:00 PM - 5:00 PM",
     color: "#d8b4fe",
   },
   {
     year: "13th March",
-    title: "Review 1",
+    title: "Jury Round 1",
     desc: "6:00 PM - 8:00 PM",
     color: "hsl(var(--primary))",
   },
   {
     year: "14th March",
-    title: "Review 2",
-    desc: "8:00 AM - 9:00 AM",
+    title: "Final Presentation",
+    desc: "8:00 AM - 10:00 AM",
     color: "#d8b4fe",
   },
   {
@@ -46,8 +46,8 @@ const events = [
   },
   {
     year: "14th March",
-    title: "Final Presentations & Valedictory",
-    desc: "10:15 AM - 1:15 PM",
+    title: "Valedictory",
+    desc: "10:15 AM - 11:00 AM",
     color: "hsl(var(--primary))",
   },
 ];
